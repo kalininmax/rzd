@@ -1,6 +1,14 @@
 {% extends "../templates/page.njk" %}
 
 {% block mainContent %}
-	{% include "intro/intro.njk" %}
-	{% include "examples/examples.njk" %}
+	{# {% include "intro/intro.njk" %}
+	{% include "examples/examples.njk" %} #}
+
+	{% include 'hero/hero.njk' %}
+	{% include 'history/history.njk' %}
+	{% include 'chapter/chapter-1.njk' %}
+	{% include 'chapter/chapter-2.njk' %}
+	{% include 'chapter/chapter-3.njk' %}
+	{% include 'future/future.njk' %}
+	{% include 'footer/footer.njk' %}
 {% endblock %}

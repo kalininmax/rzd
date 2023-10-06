@@ -215,6 +215,10 @@
 	@return calc(round(calc($px / $height) * 100vh * 10000) / 10000);
 }
 
+@function vmax($px, $width: 1920) {
+	@return calc(round(calc($px / $width) * 100vmax * 10000) / 10000);
+}
+
 @function strip-unit($number) {
 	@if type-of($number) == 'number' and not unitless($number) {
 		@return calc($number / ($number * 0 + 1px));

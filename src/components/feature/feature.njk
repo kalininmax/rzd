@@ -1,0 +1,24 @@
+<section class="feature{% if props.className %} {{ props.className }}{% endif %}" data-feature>
+	<div class="feature__container container grid">
+		<div class="feature__text c-blue" data-feature-text>
+			<h3 class="feature__title h-28">{{ props.title | safe }}</h3>
+
+			{{ props.text | safe }}
+		</div>
+
+	{% if props.numbers %}
+		<dl class="feature__numbers" data-feature-numbers>
+		{% for number in props.numbers %}
+			<div>
+				<dt class="feature__num-val c-red">{{ number.val | safe }}</dt>
+				<dd class="feature__num-text t-14 c-blue-60">{{ number.text | safe }}</dd>
+			</div>
+		{% endfor %}
+		</dl>
+	{% else %}
+		<div class="feature__numbers _empty"></div>
+	{% endif %}
+		<div class="feature__picture" data-lottie="{{ props.lottie }}" data-feature-img>
+		</div>
+	</div>
+</section>

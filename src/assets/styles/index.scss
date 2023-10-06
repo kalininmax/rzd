@@ -5,11 +5,15 @@
 @import 'reset';
 @import 'global';
 @import 'layout';
+@import 'typography';
 
-// ======= COMPONENTS =======
-@import '../../components/button/button';
+// // ======= COMPONENTS =======
 @import '../../components/header/header';
-@import '../../components/footer/footer';
+@import '../../components/feature/feature';
 
-// ======= INCLUDES =======
-@import '../../includes/intro/intro';
+// // ======= INCLUDES =======
+@import '../../includes/hero/hero';
+@import '../../includes/history/history';
+@import '../../includes/chapter/chapter';
+@import '../../includes/future/future';
+@import '../../includes/footer/footer';

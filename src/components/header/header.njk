@@ -1,10 +1,11 @@
-<header class="header{% if props.className %} {{ props.className }}{% endif %}">
-	<div class="header__container container">
-		{{ component('icon', {
-			iconName: '11ty',
-			attr: 'width="72" height="72"',
-			className: 'header__logo'
-		}) }}
-		<p class="header__title">Header</p>
+<header class="header bg-blue-10{% if props.className %} {{ props.className }}{% endif %}">
+	<div class="header__container container grid c-blue">
+		<div class="header__content">
+			<h2 class="header__title h2">{{ props.title | safe }}</h2>
+			<p class="text-lg">{{ props.desc | safe }}</p>
+		</div>
+
+		<div class="header__picture" data-lottie="{{ props.lottie }}">
+		</div>
 	</div>
 </header>

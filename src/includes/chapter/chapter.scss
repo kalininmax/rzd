@@ -1,0 +1,27 @@
+.chapter {
+	position: relative;
+	display: grid;
+	row-gap: rem(80);
+	padding-bottom: rem(80);
+	background-color: var(--default-bg-color);
+
+	@media (max-width: $laptop) {
+		row-gap: rem(40);
+		padding-bottom: rem(40);
+	}
+	&__picture {
+		position: relative;
+		display: block;
+		padding-bottom: calc(512 / 1200 * 100%);
+		width: 100%;
+		height: 0;
+		& > * {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

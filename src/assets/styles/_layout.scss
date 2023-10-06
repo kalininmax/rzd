@@ -1,23 +1,30 @@
+.wrapper {
+	position: relative;
+}
+
 .container {
 	margin-inline: auto;
 	width: min(var(--container-max-width), 100% - (var(--container-padding) * 2));
-	&._sm {
-		--container-max-width: #{rem(560)};
-	}
 }
 
 .page {
-	&__body {
-		display: flex;
-		flex-direction: column;
+	--container-max-width: #{rem(1200)};
+	--container-padding: #{rem(18)};
+
+	@media (max-width: $mobile-lg) {
+		--container-padding: #{rem(22)};
 	}
-	&__main {
-		flex-grow: 1;
-		padding-block: rem(24);
-	}
-	&__section {
-		& + & {
-			margin-top: rem(24);
-		}
+}
+
+.grid {
+	--columns: 12;
+	--column-gap: #{rem(40)};
+
+	display: grid;
+	grid-template-columns: repeat(var(--columns), 1fr);
+	column-gap: var(--column-gap);
+
+	@media (max-width: $laptop) {
+		--column-gap: #{rem(20)};
 	}
 }

@@ -9,25 +9,30 @@ body {
 	width: 100%;
 	height: 100%;
 	cursor: default;
-
-	// -webkit-text-size-adjust: 100%;
-	// -webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
 }
 
 html {
 	font-size: 16px;
+	scroll-behavior: smooth;
 
-	@media (width > $desktop-lg) {
-		font-size: vw(16, 1920);
+	@media (min-width: $desktop) {
+		font-size: clamp(16px, vw(16), 28px);
+	}
+
+	@media (max-width: $mobile-sm) {
+		font-size: max(14px, vw(14, 320));
 	}
 }
 
 body {
-	background: #fff;
-	color: #000;
-	font-family: Roboto, Arial, sans-serif;
-	font-size: rem(16);
-	line-height: 1.5;
+	background: var(--default-bg-color);
+	color: var(--default-text-color);
+	font-family: var(--default-font-family);
+	font-size: var(--default-font-size);
+	line-height: var(--default-line-height);
+	font-weight: var(--default-font-weight);
 	font-style: normal;
 
 	@include mobile {
@@ -51,15 +56,6 @@ li {
 
 img {
 	vertical-align: top;
-}
-
-a {
-	color: inherit;
-	text-decoration: underline;
-	&:hover {
-		color: #333;
-		text-decoration: none;
-	}
 }
 
 table {
@@ -89,7 +85,6 @@ input[type='number']::-webkit-outer-spin-button {
 
 input[type='number'] {
 	-moz-appearance: textfield;
-	appearance: textfield;
 }
 
 input[type='search']::-webkit-search-decoration,
@@ -101,7 +96,6 @@ input[type='search']::-webkit-search-results-decoration {
 
 input[type='search'] {
 	-webkit-appearance: textfield;
-	appearance: textfield;
 }
 
 ::selection {
@@ -124,4 +118,12 @@ a[href^='tel'] {
 button {
 	user-select: none;
 	border-radius: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
 }
